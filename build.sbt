@@ -11,8 +11,11 @@ lazy val `server` = (project in file("server"))
     name := "dev-cake-server",
     libraryDependencies ++= Seq(
       akkaHttp,
+      akkaStreams,
+      akkaActorTyped,
       tapir,
       tapirAkkaHttp,
+      tapirSwagger,
       logback,
       scalaLogging,
       scalaTest

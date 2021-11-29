@@ -2,7 +2,11 @@ import sbt._
 
 object Dependencies {
 
-  lazy val akkaHttp = "com.typesafe.akka" %% "akka-http" % "10.2.6"
+  private val akkaVersion = "2.6.17"
+  private val akkaHttpVersion = "10.2.7"
+  lazy val akkaActorTyped = "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion
+  lazy val akkaStreams = "com.typesafe.akka" %% "akka-stream" % akkaVersion
+  lazy val akkaHttp = "com.typesafe.akka" %% "akka-http" % akkaHttpVersion
   //  private val zioVersion = "2.0.0-M6-2"
   //  lazy val zio = "dev.zio" %% "zio" % zioVersion
   //
@@ -13,6 +17,7 @@ object Dependencies {
   private val tapirVersion = "0.19.0"
   lazy val tapir = "com.softwaremill.sttp.tapir" %% "tapir-core" % tapirVersion
   lazy val tapirAkkaHttp = "com.softwaremill.sttp.tapir" %% "tapir-akka-http-server" % tapirVersion
+  lazy val tapirSwagger = "com.softwaremill.sttp.tapir" %% "tapir-swagger-ui-bundle" % tapirVersion
 
 
   //  lazy val zioHttpTapir = "com.softwaremill.sttp.tapir" %% "tapir-zio" % tapirVersion
