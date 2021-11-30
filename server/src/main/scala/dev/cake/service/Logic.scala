@@ -18,5 +18,4 @@ class Logic()(implicit ec: ExecutionContext) extends StrictLogging {
       }
     }
   }
-
 }

@@ -4,7 +4,8 @@ ThisBuild / scalaVersion := "2.13.7"
 ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / organization := "com.example"
 ThisBuild / organizationName := "example"
-
+//ThisBuild / githubWorkflowJavaVersions := Seq("adopt@17")
+//ThisBuild / githubWorkflowTargetBranches := Seq("develop")
 
 lazy val `server` = (project in file("server"))
   .settings(
