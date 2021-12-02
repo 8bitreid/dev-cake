@@ -1,22 +1,10 @@
 import Dependencies._
-import sbtghactions.WorkflowStep.{Sbt, Use}
+import ReidsCustomCiSettings.workflow
 
 ThisBuild / scalaVersion := "2.13.7"
 ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / organization := "com.example"
 ThisBuild / organizationName := "example"
-
-val runSbtTest: WorkflowStep = Sbt(commands = List("test"), name = Some("sbt test"))
-val javaParams: Map[String, String] = Map("distribution" -> "temurin", "java-version" -> "17")
-val checkoutJavaStep: WorkflowStep = Use(UseRef.Public("actions", "setup-java", "v2"), javaParams, name = Some("Eclipse Tumurin"))
-
-
-val workflow: WorkflowJob = WorkflowJob(
-  id = "buildAndTest",
-  name = "Build and Test",
-  steps = List(WorkflowStep.Checkout, checkoutJavaStep, WorkflowStep.SetupScala, runSbtTest),
-  javas = List()
-)
 ThisBuild / githubWorkflowGenerate := workflow
 ThisBuild / githubWorkflowGeneratedCI := Seq(workflow)
 
