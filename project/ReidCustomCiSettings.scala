@@ -1,10 +1,7 @@
 import sbtghactions.GenerativePlugin.autoImport.{UseRef, WorkflowJob, WorkflowStep}
 import sbtghactions.WorkflowStep.{Sbt, Use}
 
-object ReidsCustomCiSettings {
-  //  val checkoutStep: WorkflowStep = Use(UseRef.Public("actions", "checkout", "v2"))
-  //  val javaParams: Map[String, String] = Map("distribution" -> "temurin", "java-version" -> "17")
-  //  val checkoutJavaStep: WorkflowStep = Use(UseRef.Public("actions", "setup-java", "v2"), javaParams, name = Some("Eclipse Tumurin"))
+object ReidCustomCiSettings {
   val checkoutStep: WorkflowStep = Use(UseRef.Public("actions", "checkout", "V2"))
   val javaParams: Map[String, String] = Map("distribution" -> "temurin", "java-version" -> "17")
   val checkoutJavaStep: WorkflowStep = Use(UseRef.Public("actions", "setup-java", "v2"), javaParams, name = Some("Eclipse Tumurin"))
