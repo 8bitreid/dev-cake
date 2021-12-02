@@ -15,7 +15,7 @@ class LogicSpec extends AnyFunSpec with Matchers {
       it("should return a friendly greeting given a name") {
         val expected = s"hello, bennett!"
         val greeting = service.greeting(testName).futureValue
-        assert(greeting == expected)
+        greeting shouldEqual expected
       }
     }
   }
