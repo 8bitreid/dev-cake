@@ -13,8 +13,10 @@ jobs:
           java-version: openjdk@1.17.0
       - name: Compile
         run: sbt test
-      - name: Publish Unit Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v1
-      if: always()
-      with:
-        files: target/test-reports/**/*.xml
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: sbt tests            # Name of the check run which will be created
+          path: target/test-reports/**/*.xml    # Path to test results
+          reporter: java-junit        # Format of test results
