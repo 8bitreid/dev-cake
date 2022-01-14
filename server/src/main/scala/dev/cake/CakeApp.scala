@@ -8,7 +8,6 @@ import com.typesafe.scalalogging.StrictLogging
 import dev.cake.service.Logic
 import sttp.tapir.server.akkahttp.AkkaHttpServerInterpreter
 import sttp.tapir.{PublicEndpoint, endpoint, query, stringBody}
-
 import scala.concurrent.{ExecutionContextExecutor, Future}
 
 
