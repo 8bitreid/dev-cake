@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: olafurpg/setup-scala@v13
         with:
-          java-version: openjdk@1.17
+          java-version: oracle@17.0.2
       - name: Run Test
         run: |
           sbt compile
